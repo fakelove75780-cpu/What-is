@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<meta name="application-name" content="SK MOBILE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<title>SK MOBILE</title>
+<style> :root{--sk-primary:#087fe0;--sk-accent:#4dc2ff}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050b14;--card:#0b1626;--blue:#16a9ff;--blue2:#006dff;--text:#eef7ff;--muted:#91a7bb;--line:#17304a}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Noto Sans Myanmar",sans-serif;background:radial-gradient(circle at 80% 0%,#07305a 0,transparent 32%),var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(5,11,20,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(22,169,255,.15)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:900;letter-spacing:.5px}
+.logo span{color:var(--blue)}
+.navlinks{display:flex;gap:22px;color:#bcd0e1;font-size:14px}
+.navlinks a:hover{color:var(--blue)}
+.hero{min-height:650px;display:grid;place-items:center;padding:70px 0 50px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}
+.badge{display:inline-flex;padding:7px 13px;border:1px solid #155a8b;background:#08233a;border-radius:999px;color:#6dccff;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.02;letter-spacing:-2px}
+h1 span{color:var(--blue)}
+.hero p{color:var(--muted);font-size:17px;margin:20px 0 28px;max-width:600px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;font-weight:800;border:1px solid var(--line)}
+.primary{background:linear-gradient(135deg,var(--blue2),var(--blue));border:0;box-shadow:0 10px 35px rgba(0,125,255,.25)}
+.secondary{background:#0b1726}
+.visual{height:360px;border:1px solid #16466c;border-radius:28px;background:linear-gradient(145deg,#0b2339,#07101c);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 25px 80px rgba(0,109,255,.15)}
+.visual:before{content:"";width:230px;height:230px;border:2px solid #159eff;border-radius:50%;box-shadow:0 0 70px rgba(22,169,255,.25);position:absolute}
+.phone{width:145px;height:260px;border:5px solid #9edcff;border-radius:28px;background:linear-gradient(150deg,#0d2843,#02070d);z-index:2;box-shadow:0 0 40px rgba(22,169,255,.3);position:relative}
+.phone:after{content:"SKPP";position:absolute;inset:0;display:grid;place-items:center;color:#28b5ff;font-weight:900;letter-spacing:3px}
+section{padding:75px 0}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:34px}
+.section-title p{color:var(--muted);margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#0b1828,#08111e);border:1px solid var(--line);padding:28px;border-radius:20px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#1978b4}
+.icon{width:52px;height:52px;border-radius:15px;background:#092942;color:#35b9ff;display:grid;place-items:center;font-size:24px;margin-bottom:18px}
+.card h3{margin-bottom:8px;font-size:20px}.card p{color:var(--muted);font-size:14px}
+.parts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.part{padding:20px;text-align:center;border:1px solid var(--line);background:#091523;border-radius:16px;color:#c9d9e6}
+.part b{display:block;color:#fff;margin-top:8px}
+.contact{background:linear-gradient(135deg,#071a2c,#06101c);border-top:1px solid #12334f;border-bottom:1px solid #12334f}
+.contact-box{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.contact p{color:var(--muted)}
+footer{padding:28px 0;color:#71879b;text-align:center;font-size:13px}
+.mobile-nav{display:none}
+@media(max-width:760px){
+ .navlinks{display:none}.hero{min-height:auto;padding:55px 0 35px}.hero-grid{grid-template-columns:1fr;gap:35px}
+ .visual{height:300px}.cards{grid-template-columns:1fr}.parts{grid-template-columns:repeat(2,1fr)}
+ section{padding:55px 0}.contact-box{flex-direction:column;align-items:flex-start}
+ h1{letter-spacing:-1px}.hero p{font-size:15px}
+ .mobile-nav{display:flex;position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:30;background:rgba(8,19,32,.92);border:1px solid #17466a;border-radius:18px;padding:8px;gap:4px;box-shadow:0 12px 40px #0008}
+ .mobile-nav a{font-size:12px;padding:9px 11px;color:#b9cee0}
+ .mobile-nav a:last-child{background:#087fe0;border-radius:12px;color:white}
+}
+
+.price-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:18px}
+.tab{border:1px solid #173d5d;background:#091624;color:#b9cde0;padding:12px 20px;border-radius:12px;font-weight:800;cursor:pointer}
+.tab.active{background:linear-gradient(135deg,#006dff,#16a9ff);color:#fff;border-color:transparent}
+.search-wrap{max-width:620px;margin:0 auto 25px}.search-wrap input{width:100%;padding:14px 17px;border-radius:13px;border:1px solid #173b59;background:#071321;color:#fff;outline:none}
+.price-panel{display:none}.price-panel.active{display:block}.notice{padding:13px 16px;margin-bottom:20px;border:1px solid #16466c;background:#082238;border-radius:13px;color:#9fc4df}
+.price-brand{margin:25px 0}.price-brand h3{font-size:21px;margin-bottom:10px;color:#fff}.price-brand h3 span{font-size:12px;color:#55bdff;font-weight:500;margin-left:7px}
+.price-list{border:1px solid #16344d;border-radius:15px;overflow:hidden}.price-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 16px;background:#091523;border-bottom:1px solid #122b40}.price-row:last-child{border-bottom:0}.price-row small{display:block;color:#718da4;margin-top:2px}.price-row strong{color:var(--sk-accent);white-space:nowrap}
+@media(max-width:600px){.price-tabs{position:sticky;top:68px;z-index:10;background:#050b14;padding:10px 0}.tab{flex:1;padding:11px 5px;font-size:13px}.price-row{padding:13px 12px}.price-row strong{font-size:14px}}
+
+.viber-float{position:fixed;right:18px;bottom:82px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#7360f2;color:#fff;font-size:25px;font-weight:900;z-index:31;box-shadow:0 8px 25px #0007}
+.admin-note{margin-top:18px;padding:12px 15px;border:1px dashed #245879;border-radius:12px;color:#8fb0c5;font-size:13px}
+
+.admin-btn{position:fixed;right:14px;bottom:76px;z-index:40;background:#0b1726;border:1px solid #1978b4;color:#fff;padding:11px 14px;border-radius:14px;font-weight:800;box-shadow:0 10px 30px #0008;cursor:pointer}.admin-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;padding:18px;overflow:auto}.admin-box{width:min(980px,100%);margin:20px auto;background:#081321;border:1px solid #17466a;border-radius:20px;padding:20px;box-shadow:0 25px 80px #000}.admin-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:18px}.admin-head h2{font-size:24px}.admin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.admin-field{background:#0b1828;border:1px solid #17304a;padding:14px;border-radius:14px}.admin-field label{display:block;color:#9fc4df;font-size:13px;margin-bottom:7px}.admin-field input,.admin-field textarea,.admin-field select{width:100%;padding:11px;border-radius:10px;border:1px solid #24445e;background:#06101c;color:#fff}.admin-field textarea{min-height:80px;resize:vertical}.admin-full{grid-column:1/-1}.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.admin-small{font-size:12px;color:#7891a5;margin-top:7px}.drag-handle{cursor:grab;font-size:18px;opacity:.8}.admin-item.dragging{opacity:.45}.admin-item.drag-over{outline:2px dashed #2aa9ff}.file-actions{display:flex;gap:8px;flex-wrap:wrap}.apk-box{margin-top:14px;padding:14px;border:1px solid #17304a;border-radius:14px;background:#0b1828}.apk-box a{display:inline-block;margin-top:8px}.admin-list{margin-top:10px;display:grid;gap:8px}.admin-item{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px;background:#07111d;border:1px solid #16344d;border-radius:10px}.admin-item button{padding:7px 10px;border-radius:8px;border:1px solid #31536b;background:#0d2032;color:#fff;cursor:pointer}.danger{border-color:#8d3a46!important}.close-btn{background:#10263a!important;font-size:18px}.login-box{max-width:420px;margin:80px auto}.toast{position:fixed;top:80px;right:15px;z-index:200;background:var(--sk-primary);color:#fff;padding:12px 16px;border-radius:12px;display:none}.admin-tabs{display:flex;gap:7px;overflow:auto;margin-bottom:15px}.admin-tabs button{white-space:nowrap;padding:9px 12px;border:1px solid #173d5d;background:#091624;color:#b9cde0;border-radius:10px;cursor:pointer}.admin-tabs button.active{background:var(--sk-primary);color:#fff}.admin-pane{display:none}.admin-pane.active{display:block}@media(max-width:650px){.admin-grid{grid-template-columns:1fr}.admin-full{grid-column:auto}.admin-box{padding:14px}.admin-btn{bottom:80px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">SK <span>MOBILE</span></a>
+    <nav class="navlinks"><a href="#home">ပင်မ</a><a href="#services">ဝန်ဆောင်မှု</a><a href="#parts">အပိုပစ္စည်း</a><a href="#price-list">ဈေးနှုန်း</a><a href="#contact">ဆက်သွယ်ရန်</a></nav>
+  </div>
+</header>
+
+
+<button class="admin-btn" onclick="openAdmin()">⚙️ Admin</button>
+<div id="toast" class="toast"></div>
+<div id="adminOverlay" class="admin-overlay">
+  <div class="admin-box" id="loginPanel">
+    <div class="admin-head"><h2>🔐 SK MOBILE Admin</h2><button class="btn close-btn" onclick="closeAdmin()">×</button></div>
+    <div class="login-box">
+      <div class="admin-field"><label>Admin Password</label><input id="adminPass" type="password" placeholder="Password ထည့်ပါ" onkeydown="if(event.key==='Enter')adminLogin()"></div>
+      <div class="admin-actions"><button class="btn primary" onclick="adminLogin()">ဝင်မည်</button></div>
+      <p class="admin-small">Firebase Authentication ဖြင့် Admin login ပြုလုပ်ပါမည်။ Password ကို source code ထဲတွင် မသိမ်းထားပါ။</p>
+    </div>
+  </div>
+  <div class="admin-box" id="dashboardPanel" style="display:none">
+    <div class="admin-head"><div><h2>⚙️ Admin Dashboard</h2><p class="admin-small">Website အချက်အလက်တွေကို ဒီနေရာကနေ ပြင်နိုင်ပါတယ်။</p></div><button class="btn close-btn" onclick="closeAdmin()">×</button></div>
+    <div class="admin-tabs">
+      <button class="active" onclick="adminTab('general',this)">အထွေထွေ</button><button onclick="adminTab('services',this)">ဝန်ဆောင်မှု</button><button onclick="adminTab('parts',this)">အပိုပစ္စည်း</button><button onclick="adminTab('prices',this)">ဈေးနှုန်း</button>
+    </div>
+    <div id="pane-general" class="admin-pane active"><div class="admin-grid">
+      <div class="admin-field"><label>Website Name</label><input id="aName"></div><div class="admin-field"><label>Facebook Link</label><input id="aFacebook"></div>
+      <div class="admin-field"><label>Viber Number</label><input id="aViber"></div><div class="admin-field"><label>Hero Badge</label><input id="aBadge"></div>
+      <div class="admin-field admin-full"><label>Hero Description</label><textarea id="aDesc"></textarea></div>
+      <div class="admin-field"><label>Messenger Link</label><input id="aMessenger" placeholder="https://m.me/yourpage"></div><div class="admin-field"><label>Footer Text</label><input id="aFooter"></div>
+      <div class="admin-field"><label>APK Download Link</label><input id="aApkUrl" placeholder="https://github.com/.../releases/latest/download/app-debug.apk"></div>
+      <div class="admin-field"><label>Primary Color</label><input id="aPrimary" type="color" value="#087fe0"></div>
+      <div class="admin-field"><label>Accent Color</label><input id="aAccent" type="color" value="#4dc2ff"></div>
+    </div><div class="admin-actions"><button class="btn primary" onclick="saveGeneral()">💾 သိမ်းမည်</button><button class="btn secondary" onclick="resetAll()">↩️ မူရင်းပြန်ထား</button></div>
+      <div class="apk-box"><b>📦 Data File / Share</b><p class="admin-small">Setting, service, part, price list အားလုံးကို backup file အဖြစ်သိမ်းပြီး အခြားသူထံ share/import လုပ်နိုင်ပါတယ်။</p><div class="file-actions"><button class="btn secondary" onclick="exportDataFile()">⬇️ File ထုတ်မည်</button><button class="btn secondary" onclick="shareDataFile()">📤 File Share</button><button class="btn secondary" onclick="document.getElementById('importFile').click()">📥 File Import</button><input id="importFile" type="file" accept="application/json,.json" hidden onchange="importDataFile(event)"></div></div>
+      <div class="apk-box"><b>📱 APK Download</b><p class="admin-small">APK link ထည့်ပြီး website/app ထဲမှာ download ခလုတ်ပြနိုင်ပါတယ်။</p><a id="adminApkPreview" class="btn primary" href="#" target="_blank" rel="noopener">APK Download</a></div>
+      </div></div>
+    <div id="pane-services" class="admin-pane"><div class="admin-grid"><div class="admin-field"><label>ဝန်ဆောင်မှုအမည်</label><input id="sTitle"></div><div class="admin-field"><label>Icon</label><input id="sIcon" placeholder="🔧"></div><div class="admin-field admin-full"><label>အကြောင်းအရာ</label><textarea id="sDesc"></textarea></div></div><div class="admin-actions"><button class="btn primary" onclick="addService()">＋ ထည့်မည်</button></div><div id="serviceAdminList" class="admin-list"></div></div>
+    <div id="pane-parts" class="admin-pane"><div class="admin-grid"><div class="admin-field"><label>ပစ္စည်းအမည်</label><input id="pTitle"></div><div class="admin-field"><label>Icon</label><input id="pIcon" placeholder="🔋"></div></div><div class="admin-actions"><button class="btn primary" onclick="addPart()">＋ ထည့်မည်</button></div><div id="partAdminList" class="admin-list"></div></div>
+    <div id="pane-prices" class="admin-pane"><div class="admin-grid"><div class="admin-field"><label>အမျိုးအစား</label><select id="priceType"><option value="screen">Screen / Glass</option><option value="battery">Battery</option></select></div><div class="admin-field"><label>Brand</label><input id="priceBrand" placeholder="Redmi"></div><div class="admin-field"><label>Model</label><input id="priceModel"></div><div class="admin-field"><label>ဈေးနှုန်း (Ks)</label><input id="priceValue" type="number"></div></div><div class="admin-actions"><button class="btn primary" onclick="addPrice()">＋ ဈေးထည့်မည်</button></div><div id="priceAdminList" class="admin-list"></div></div>
+  </div>
+</div>
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="badge">⚡ PHONE REPAIR &amp; SALES</div>
+   <h1>SK<br><span>MOBILE</span></h1>
+   <p>ဖုန်းပြင်ဆင်ခြင်း၊ ဖုန်းအရောင်းနှင့် အရည်အသွေးကောင်း အပိုပစ္စည်းများကို တစ်နေရာတည်းမှာ ရရှိနိုင်ပါတယ်။</p>
+   <div class="btns">
+    <a class="btn primary" href="#services">ဝန်ဆောင်မှုကြည့်ရန်</a>
+    <!-- Replace the # below with your Messenger page/chat link -->
+    <a class="btn secondary" href="https://www.facebook.com/share/19eMmyswMb/" target="_blank" rel="noopener">💬 Facebook ဆက်သွယ်ရန်</a>
+    <a id="apkDownloadBtn" class="btn secondary" href="#" target="_blank" rel="noopener" style="display:none">📱 APK Download</a>
+   </div>
+  </div>
+  <div class="visual"><div class="phone"></div></div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="container">
+  <div class="section-title"><h2>ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှု</h2><p>ဖုန်းအတွက် လိုအပ်တာတွေကို တစ်နေရာတည်းမှာ</p></div>
+  <div class="cards">
+   <article class="card"><div class="icon">🔧</div><h3>ဖုန်းပြင်ဝန်ဆောင်မှု</h3><p>Software / Hardware ပြဿနာများ၊ Screen၊ Battery၊ Charging နှင့် အခြားပြုပြင်မှုများ။</p></article>
+   <article class="card"><div class="icon">📱</div><h3>ဖုန်းအရောင်း</h3><p>လိုအပ်သည့် ဖုန်းမော်ဒယ်များကို စုံစမ်းဝယ်ယူနိုင်ပါသည်။</p></article>
+   <article class="card"><div class="icon">⚙️</div><h3>စစ်ဆေး &amp; ပြုပြင်</h3><p>ပြဿနာအကြောင်းရင်းကို စစ်ဆေးပြီး သင့်တော်သော ပြုပြင်နည်းကို အကြံပြုပေးပါသည်။</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="parts">
+ <div class="container">
+  <div class="section-title"><h2>ဖုန်းအပိုပစ္စည်း</h2><p>အသုံးများသော Accessories များ</p></div>
+  <div class="parts">
+   <div class="part">🔋<b>Battery</b></div><div class="part">🔌<b>Charger</b></div>
+   <div class="part">🛡️<b>Screen Protector</b></div><div class="part">🎧<b>Earphones</b></div>
+  </div>
+ </div>
+</section>
+
+
+<section id="price-list">
+ <div class="container">
+  <div class="section-title"><h2>Service Price List</h2><p>Model တူများကိုပေါင်းပြီး အမြင့်ဆုံးဈေးဖြင့် ပြထားသော မှန်နှင့် Battery လဲလှယ်ခများ</p></div>
+  <div class="price-tabs">
+   <button class="tab active" onclick="showPrice('screens',this)">📱 မှန် / Screen</button>
+   <button class="tab" onclick="showPrice('batteries',this)">🔋 Battery</button>
+  </div>
+  <div class="search-wrap"><input id="priceSearch" oninput="filterPrice()" placeholder="Model ရှာရန်... ဥပမာ Redmi Note 8"></div>
+<div class="admin-note">Admin စနစ်အတွက် ဤ website ကို database + login ပါသော version အဖြစ် ဆက်တိုးနိုင်ပါတယ်။ ထို version တွင် ဈေးနှုန်း၊ Model၊ ဝန်ဆောင်မှုနှင့် ကြော်ငြာစာသားများကို Admin မှ တိုက်ရိုက်ပြင်နိုင်ပါမည်။</div>
+  <div id="screens" class="price-panel active">
+   <div class="notice">မှန်လဲလှယ်ခ — Model တူများအနက် <b>အမြင့်ဆုံးဈေး</b></div>
+   <div class="price-brand"><h3>Redmi <span>Screen / Glass</span></h3><div class="price-list"><div class="price-row" data-search="redmi note 11 r redmi"><div><b>Redmi Note 11 R</b><small>အမြင့်ဆုံးဈေး</small></div><strong>77,000 Ks</strong></div><div class="price-row" data-search="redmi note 8 redmi"><div><b>Redmi Note 8</b><small>အမြင့်ဆုံးဈေး</small></div><strong>77,000 Ks</strong></div><div class="price-row" data-search="redmi note 9 4g redmi"><div><b>Redmi Note 9 4G</b><small>အမြင့်ဆုံးဈေး</small></div><strong>77,000 Ks</strong></div><div class="price-row" data-search="redmi 9a redmi"><div><b>Redmi 9A</b><small>အမြင့်ဆုံးဈေး</small></div><strong>77,000 Ks</strong></div><div class="price-row" data-search="redmi 9t redmi"><div><b>Redmi 9T</b><small>အမြင့်ဆုံးဈေး</small></div><strong>77,000 Ks</strong></div><div class="price-row" data-search="redmi note <17> / note 7 redmi"><div><b>Redmi Note <17> / Note 7</b><small>အမြင့်ဆုံးဈေး</small></div><strong>73,000 Ks</strong></div><div class="price-row" data-search="redmi 7 redmi"><div><b>Redmi 7</b><small>အမြင့်ဆုံးဈေး</small></div><strong>70,000 Ks</strong></div><div class="price-row" data-search="redmi 6 redmi"><div><b>Redmi 6</b><small>အမြင့်ဆုံးဈေး</small></div><strong>60,000 Ks</strong></div><div class="price-row" data-search="redmi 8 redmi"><div><b>Redmi 8</b><small>အမြင့်ဆုံးဈေး</small></div><strong>80,000 Ks</strong></div><div class="price-row" data-search="redmi 10 redmi"><div><b>Redmi 10</b><small>အမြင့်ဆုံးဈေး</small></div><strong>80,000 Ks</strong></div><div class="price-row" data-search="redmi 14c redmi"><div><b>Redmi 14C</b><small>အမြင့်ဆုံးဈေး</small></div><strong>82,000 Ks</strong></div><div class="price-row" data-search="redmi note 13 redmi"><div><b>Redmi Note 13</b><small>အမြင့်ဆုံးဈေး</small></div><strong>92,000 Ks</strong></div><div class="price-row" data-search="redmi k30 / k15 redmi"><div><b>Redmi K30 / K15</b><small>အမြင့်ဆုံးဈေး</small></div><strong>83,000 Ks</strong></div></div></div>
+<div class="price-brand"><h3>Vivo <span>Screen / Glass</span></h3><div class="price-list"><div class="price-row" data-search="vivo y12 vivo"><div><b>Vivo Y12</b><small>အမြင့်ဆုံးဈေး</small></div><strong>70,000 Ks</strong></div><div class="price-row" data-search="vivo y11 2019 original vivo"><div><b>Vivo Y11 2019 Original</b><small>အမြင့်ဆုံးဈေး</small>
